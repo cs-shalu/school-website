@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login | SKSS Inter College</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;font-family:Segoe UI,Arial}
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to right,#081f37,#020f1e);
+}
+
+/* LOGIN BOX */
+.login-box{
+background:white;
+padding:40px;
+width:340px;
+border-radius:16px;
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+text-align:center;
+}
+.login-box h2{
+color:#081f37;
+margin-bottom:20px;
+}
+input{
+width:100%;
+padding:14px;
+margin:12px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:15px;
+}
+button{
+width:100%;
+padding:14px;
+background:#081f37;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+button:hover{background:#06172b}
+.error{
+color:red;
+margin-top:10px;
+display:none;
+font-weight:700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+<h2>Admin Login</h2>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p class="error" id="errorMsg">Invalid Username or Password</p>
+</div>
+
+<script>
+function login(){
+let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+/* DEMO CREDENTIALS */
+if(user === "admin" && pass === "12345"){
+window.location.href = "admin-dashboard.html";
+}else{
+document.getElementById("errorMsg").style.display = "block";
+}
+}
+</script>
+
+</body>
+</html>
